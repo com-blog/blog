@@ -6,12 +6,33 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "code:lint": "./node_modules/.bin/eslint . --ext .ts,.vue",
+    "code:prettier": "./node_modules/.bin/prettier --write ./**/*.{ts,js,vue}",
+    "lintfix": "yarn code:lint --fix && yarn code:prettier",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{ts,js}": [
+      "yarn lintfix",
+      "git add"
+    ]
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@types/node": "^18",
-    "nuxt": "^3.5.2"
+    "@typescript-eslint/parser": "^5.60.1",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.3",
+    "nuxt": "^3.5.2",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
     "@mdi/font": "^7.2.96",

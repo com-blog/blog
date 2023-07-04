@@ -5,11 +5,9 @@
 </template>
 
 <script setup>
-  import { useRoute } from "nuxt/app";
+  import { useRoute } from 'nuxt/app';
 
   const { id } = useRoute().params;
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
