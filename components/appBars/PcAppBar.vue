@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar color="teal-darken-4">
+  <v-app-bar color="primary">
     <v-app-bar-title>{{ title }}</v-app-bar-title>
     <v-spacer></v-spacer>
 
@@ -10,8 +10,17 @@
 </template>
 
 <script setup lang="ts">
+  import { PropType } from 'vue';
+  import { RouteItem } from '@/shared/types/Nav';
+
   defineProps({
-    title: String,
-    items: Array,
+    title: {
+      type: String,
+      required: true,
+    },
+    items: {
+      type: Array as PropType<RouteItem>,
+      required: true,
+    },
   });
 </script>
