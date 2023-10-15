@@ -35,7 +35,13 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.8",
+    "@fullcalendar/daygrid": "^6.1.8",
+    "@fullcalendar/interaction": "^6.1.8",
+    "@fullcalendar/timegrid": "^6.1.8",
+    "@fullcalendar/vue3": "^6.1.8",
     "@mdi/font": "^7.2.96",
+    "dayjs-nuxt": "^1.2.3",
     "sass": "^1.63.3",
     "vite-plugin-vuetify": "^1.0.2",
     "vuetify": "^3.3.3"

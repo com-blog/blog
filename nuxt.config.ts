@@ -28,6 +28,13 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
+  modules: ['dayjs-nuxt'],
+  dayjs: {
+    locales: ['en', 'zh-tw', 'ja'],
+    plugins: ['relativeTime', 'utc', 'timezone', 'updateLocale'],
+    defaultLocale: 'zh-tw',
+    defaultTimezone: 'Asia/Taipei',
+  },
   vite: {
     define: {
       'process.env.DEBUG': false,
@@ -45,7 +52,4 @@ export default defineNuxtConfig({
   },
   // Prevent warning message: points to missing source files
   sourcemap: { server: true, client: false },
-  routeRules: {
-    '/': { redirect: '/home/' },
-  },
 });
